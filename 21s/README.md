@@ -1,6 +1,7 @@
 Can you beat the dealer at 21
 ======================================
-
+* In my version of this challenge, I have opted for an added sense of realism where an initial 21 drawn by either 'Sam' or the dealer do not create a win straight away, rather they continue drawing cards until their conditions are met and a winner is decided at the end
+    
 #### Model the game
 * create a single deck of playing cards
 * two players (called Sam and the Dealer) who will play against each other
