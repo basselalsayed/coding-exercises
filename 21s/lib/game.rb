@@ -21,15 +21,7 @@ def check_score(player)
 end
 
 def check_blackjack(player, dealer)
-  if check_score(player) == 21 && check_score(dealer) == 21
-    puts "Push"
-  elsif check_score(dealer) == 21 
-    blackjack
-  elsif check_score(player) == 21
-    blackjack
-  else
-    false
-  end
+  blackjack if check_score(player) == 21 || check_score(dealer) == 21 
 end
 
 def blackjack
@@ -78,7 +70,7 @@ def start_game(player, dealer, deck)
   initial_cards(player, dealer, deck)
   print_score(player)
   print_score(dealer)
-  check_blackjack(player, dealer)
+  check_blackjack(player, dealer) #unless $stdout.include?(blackjack)
 end
 
 run_game(Sam, Dealer, $deck)
