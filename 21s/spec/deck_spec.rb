@@ -1,7 +1,6 @@
 require 'deck'
 
 describe Deck do 
-  let(:player) { double :player }
 
   describe '#initialization' do 
     it { expect(subject.cards.length).to eq 52 }

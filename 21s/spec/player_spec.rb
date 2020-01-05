@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do 
-  let(:deck) { double :deck }
+  let(:deck) { double(:deck, cards: ["two"]) }
   let(:subject) { described_class.new("test") }
 
   describe '#initialization' do 
@@ -10,7 +10,6 @@ describe Player do
 
   describe '#draw' do 
     before do 
-      allow(deck).to receive(:cards).and_return(["two"])
       subject.draw(deck)
     end
     it 'draws a card and adds to the hand' do 
@@ -22,9 +21,6 @@ describe Player do
   end
 
   describe '#score' do 
-    before do 
-      allow(deck).to receive(:cards).and_return(["two"])
-    end
     it 'calculates the score of a hand' do 
       subject.draw(deck)
       expect(subject.score).to eq 2
